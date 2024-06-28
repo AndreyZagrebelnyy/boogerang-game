@@ -7,14 +7,18 @@ const keypress = require('keypress');
 // Настроим соответствия нажатий на клавиши и действий в игре.
 
 const keyboard = {
-  q: (hero) => console.log('q'),
+  q: () => console.log('q'),
   w: () => console.log('w'),
   e: () => console.log('e'),
   r: () => console.log('r'),
   t: () => console.log('t'),
   y: () => console.log('y'),
   a: (hero) => hero.moveLeft(),
-  d: (hero) => hero.moveRight(),
+  d: (hero) =>  hero.moveRight(),
+	g: (hero) => hero.moveRight(),
+
+
+  
 }
 // Какая-то функция.
 
@@ -26,6 +30,7 @@ function runInteractiveConsole(hero) {
       if (key.name in keyboard) {
         keyboard[key.name](hero);
       }
+
       // Прерывание программы.
       if (key.ctrl && key.name === 'c') {
         process.exit();

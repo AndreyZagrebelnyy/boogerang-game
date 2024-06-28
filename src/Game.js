@@ -27,23 +27,24 @@ class Game {
     // в единую структуру данных
     this.track = (new Array(this.trackLength)).fill(' ');
     this.track[this.hero.position] = this.hero.skin;
+	 this.track[this.enemy.position] = this.enemy.skin;
   }
 
   check() {
     if (this.hero.position === this.enemy.position) {
       this.hero.die();
     }
-
   }
 
   play() {
+	  runInteractiveConsole(this.hero);
     setInterval(() => {
       // Let's play!
       this.check();
-		runInteractiveConsole(this.hero)  
       this.regenerateTrack();
       this.view.render(this.track);
-    });
+		this.enemy.moveLeft();
+    }, 300);
   }
 }
 
