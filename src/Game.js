@@ -6,6 +6,8 @@ const Hero = require('./game-models/Hero');
 const Enemy = require('./game-models/Enemy');
 // const Boomerang = require('./game-models/Boomerang');
 const View = require('./View');
+const runInteractiveConsole = require('./keyboard.js');
+
 
 // Основной класс игры.
 // Тут будут все настройки, проверки, запуск.
@@ -31,12 +33,14 @@ class Game {
     if (this.hero.position === this.enemy.position) {
       this.hero.die();
     }
+
   }
 
   play() {
     setInterval(() => {
       // Let's play!
       this.check();
+		runInteractiveConsole(this.hero)  
       this.regenerateTrack();
       this.view.render(this.track);
     });
