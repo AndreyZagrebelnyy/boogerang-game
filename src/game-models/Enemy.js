@@ -1,9 +1,9 @@
 // Враг.
 
 class Enemy {
-  constructor() {
+  constructor(args = {}) {
     this.generateSkin();
-    this.position = 20;
+    this.position = args.position;
   }
 
   generateSkin() {
@@ -17,8 +17,9 @@ class Enemy {
   }
 
   die() {
-    this.position = '?';
-    console.log('Enemy is dead!');
+    this.skin = '🤺';
+
+    console.log('ням-ням');
   }
 }
 
