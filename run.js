@@ -1,7 +1,6 @@
 // Основной файл.
 // Запускает игру.
 const Game = require('./src/Game');
-console.log('hello')
 
 // Инициализация игры с настройками.
 const game = new Game({
