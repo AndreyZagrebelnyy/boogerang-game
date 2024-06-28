@@ -1,9 +1,10 @@
 // Враг.
+// const play = require('play-sound')();
 
 class Enemy {
-  constructor() {
+  constructor(args = {}) {
     this.generateSkin();
-    this.position = 8;
+    this.position = args.position;
   }
 
   generateSkin() {
@@ -30,12 +31,8 @@ class Enemy {
   }
 
   die() {
-    this.position = "?";
-    console.log("Enemy is dead!");
-  }
-  moveRandomly() {
-    const position = Math.random() < 0.5 ? -1 : 1;
-    this.moveLeft(position);
+    this.skin = "💀";
+    console.log("пппфффффф");
   }
 }
 

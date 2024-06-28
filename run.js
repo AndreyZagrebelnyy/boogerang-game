@@ -1,13 +1,20 @@
 // Основной файл.
 // Запускает игру.
-const Game = require('./src/Game');
-
+const readline = require("readline");
+const Game = require("./src/Game");
+const runInteractiveConsole = require("./src/keyboard");
 
 // Инициализация игры с настройками.
 const game = new Game({
   trackLength: 30,
 });
 
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-// Запуск игры.
-game.play();
+rl.question("Как твое имя?:", (name) => {
+  runInteractiveConsole(game);
+  console.log(`${name}, сыграем)?`);
+});

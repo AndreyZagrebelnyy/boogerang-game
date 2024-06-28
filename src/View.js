@@ -1,8 +1,7 @@
 // Сделаем отдельный класс для отображения игры в консоли.
 
-
 class View {
-  render(track) {
+  render(track,track1) {
     const yourTeamName = 'Elbrus';
 
     // Тут всё рисуем.
