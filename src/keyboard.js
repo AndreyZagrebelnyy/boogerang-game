@@ -8,12 +8,13 @@ const keypress = require('keypress');
 // Настроим соответствия нажатий на клавиши и действий в игре.
 
 const keyboard = {
-  q: () => console.log('q'),
-  w: () => console.log('w'),
-  e: () => console.log('e'),
+  w: (hero) => Hero.moveLeft('w'),
+  a: () => console.log('a'),
+  s: () => console.log('s'),
   r: () => console.log('r'),
   t: () => console.log('t'),
   y: () => console.log('y'),
+
 };
 
 // Какая-то функция.
@@ -38,3 +39,5 @@ function runInteractiveConsole() {
 // Давай попробуем запустить этот скрипт!
 
 runInteractiveConsole();
+
+module.exports = 
