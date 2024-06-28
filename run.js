@@ -1,6 +1,8 @@
+
 const readline = require('readline');
 const Game = require('./src/Game');
 const runInteractiveConsole = require('./src/keyboard');
+
 
 // Инициализация игры с настройками.
 const game = new Game({
@@ -12,7 +14,9 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+
 rl.question('Представься, подаван?:', (name) => {
   runInteractiveConsole(game);
   console.log(`${name}, играть будем?`);
+
 });

@@ -1,4 +1,5 @@
 // Враг.
+// const play = require('play-sound')();
 
 class Enemy {
   constructor(args = {}) {
@@ -7,7 +8,20 @@ class Enemy {
   }
 
   generateSkin() {
-    const skins = ['👾', '💀', '👹', '👻', '👽', '👿', '💩', '🤡', '🤺', '🧛', '🧟', '🎃'];
+    const skins = [
+      "👾",
+      "💀",
+      "👹",
+      "👻",
+      "👽",
+      "👿",
+      "💩",
+      "🤡",
+      "🤺",
+      "🧛",
+      "🧟",
+      "🎃",
+    ];
     this.skin = skins[Math.floor(Math.random() * skins.length)];
   }
 
@@ -17,9 +31,10 @@ class Enemy {
   }
 
   die() {
-    this.skin = '🤺';
 
-    console.log('ням-ням');
+    this.skin = "💀";
+    console.log("пппфффффф");
+
   }
 }
 

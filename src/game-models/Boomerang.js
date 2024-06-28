@@ -1,6 +1,8 @@
 class Boomerang {
   constructor() {
+
     this.skin = '💩';
+
     this.position = 1;
   }
 

@@ -1,8 +1,10 @@
+
 const Hero = require('./game-models/Hero');
 const Enemy = require('./game-models/Enemy');
 const Boomerang = require('./game-models/Boomerang');
 const View = require('./View');
 const runInteractiveConsole = require('./keyboard');
+
 
 // Основной класс игры.
 // Тут будут все настройки, проверки, запуск.
@@ -20,11 +22,14 @@ class Game {
   }
 
   regenerateTrack() {
+
     this.track = new Array(this.trackLength).fill(' ');
+
     this.track[this.hero.position] = this.hero.skin;
     this.track[this.enemy.position] = this.enemy.skin;
     this.track[this.boomerang.position] = this.boomerang.skin;
     this.track1 = (new Array(this.trackLength)).fill(' ');
+
   }
 
   check() {
@@ -35,33 +40,35 @@ class Game {
       this.enemy.die();
     }
   }
-
   play() {
     this.check();
-    this.regenerateTrack();
-    this.view.render(this.track, this.track1);
-  }
 
+        this.regenerateTrack();
+        this.view.render(this.track,this.track1);
+      }
   flyBoom() {
+   
     setInterval(() => {
-      if (this.enemy.skin === '💀') {
+      if (this.enemy.skin === '💀' ){
         this.boomerang.moveLeft();
         this.check();
         this.regenerateTrack();
-        this.view.render(this.track, this.track1);
+        this.view.render(this.track,this.track1);
         console.log('Enemy is dead!');
-      } else {
-        this.boomerang.moveRight();
-        this.check();
-        this.regenerateTrack();
-        this.view.render(this.track, this.track1);
+        } 
+        else {
+          this.boomerang.moveRight();
+          this.check();
+          this.regenerateTrack();
+          this.view.render(this.track,this.track1);
       }
-      if (this.boomerang.position === this.hero.position + 1) {
-        console.log('YOU WINNER! CONGRATULATION!!');
+        if (this.boomerang.position  === this.hero.position +1) {
+          console.log('YOU WINNER! CONGRATULATION!!')
+          process.exit();
+        } 
+  },150);
 
-        process.exit();
-      }
-    }, 150);
+
   }
 }
 
