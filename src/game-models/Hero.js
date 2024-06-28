@@ -1,9 +1,7 @@
-// Наш герой.
-
 class Hero {
-  constructor({ position } = {}) {
-    this.skin = '🤠'; // можете использовать любые emoji '💃'
-    this.position = 1;
+  constructor(args = {}) {
+    this.skin = '👻'; 
+    this.position = args.position || 0;
   }
 
   moveLeft() {
@@ -22,8 +20,8 @@ class Hero {
   }
 
   die() {
-    this.skin = '💀';
-    console.log('YOU ARE DEAD!💀');
+    this.skin = 'U+200D';
+    console.log('КОНЕЦ!');
     process.exit();
   }
 }
