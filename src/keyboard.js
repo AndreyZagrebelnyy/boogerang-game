@@ -1,7 +1,3 @@
-// Умеешь работать с keypress? Попробуй разобраться в этом файле.
-// Вместо keypress можно использовать и стандартный readline.
-// Главное не используй всё вместе!
-
 const keypress = require('keypress');
 const Game = require('./Game');
 
@@ -35,8 +31,8 @@ function runInteractiveConsole(game) {
   process.stdin.setRawMode(true);
 }
 
-// Давай попробуем запустить этот скрипт!
 
-// runInteractiveConsole();
+
 module.exports = runInteractiveConsole;
+
 

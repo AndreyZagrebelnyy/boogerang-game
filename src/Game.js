@@ -1,8 +1,3 @@
-// Импортируем всё необходимое.
-// Или можно не импортировать,
-// а передавать все нужные объекты прямо из run.js при инициализации new Game().
-// const play = require("play-sound")();
-
 
 const Hero = require('./game-models/Hero');
 const Enemy = require('./game-models/Enemy');
@@ -22,20 +17,19 @@ class Game {
     this.enemy = new Enemy({ position: this.trackLength - 1 });
     this.view = new View();
     this.track = [];
+    this.track1 = [];
     this.regenerateTrack();
   }
 
   regenerateTrack() {
-    // Сборка всего необходимого (герой, враг(и), оружие)
-    // в единую структуру данных
-    this.track = new Array(this.trackLength).fill(" ");
+
+    this.track = new Array(this.trackLength).fill(' ');
+
     this.track[this.hero.position] = this.hero.skin;
     this.track[this.enemy.position] = this.enemy.skin;
     this.track[this.boomerang.position] = this.boomerang.skin;
     this.track1 = (new Array(this.trackLength)).fill(' ');
-    // this.track1[this.hero.position] = this.hero.skin;
-    // this.track1[this.enemy.position] = this.enemy.skin;
-    // this.track1[this.boomerang.position] = this.boomerang.skin;
+
   }
 
   check() {
@@ -48,11 +42,12 @@ class Game {
   }
   play() {
     this.check();
+
         this.regenerateTrack();
         this.view.render(this.track,this.track1);
       }
   flyBoom() {
-    // play.play("./src/sounds/mem.mp3");
+   
     setInterval(() => {
       if (this.enemy.skin === '💀' ){
         this.boomerang.moveLeft();
@@ -72,6 +67,7 @@ class Game {
           process.exit();
         } 
   },150);
+
 
   }
 }

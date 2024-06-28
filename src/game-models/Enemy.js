@@ -31,8 +31,10 @@ class Enemy {
   }
 
   die() {
+
     this.skin = "💀";
     console.log("пппфффффф");
+
   }
 }
 
